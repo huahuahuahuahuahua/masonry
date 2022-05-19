@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masonry layouts</title>
+  </head>
+  <style>
+    /* 
+        column-count: 设置共有几列
+        column-width: 设置每列宽度，列数由总宽度与每列宽度计算得出
+        column-gap: 设置列与列之间的间距
+        break-inside: avoid; 设置元素不能中断
+      */
+    .container {
+      column-count: 3;
+      column-gap: 10px;
+    }
+    .container .item {
+      break-inside: avoid;
+      width: 100px;
+      height: 100px;
+      background-color: rgb(145, 48, 48);
+      margin-bottom: 10px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>masonry-flex-pro</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      border: none;
+    }
+    img {
+      width: 200px;
+      vertical-align: top;
+    }
+    #main {
+      position: relative;
+    }
+    .box {
+      float: left;
+      padding: 15px 0 0 15px;
+    }
+    .pic {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+  </style>
+  <body>
+    <div id="main">
+      <div class="box">
+        <div class="pic">
+          <img
+            src="https://i.pinimg.com/236x/7f/24/8c/7f248c9e18abe79de0d6c79617e03361.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="box">
+        <div class="pic">
+          <img
+            src="https://i.pinimg.com/236x/7f/24/8c/7f248c9e18abe79de0d6c79617e03361.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="box">
+        <div class="pic">
+          <img
+            src="https://i.pinimg.com/236x/a6/cd/0a/a6cd0a15d5b2909539dd7944201127d2.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="box">
+        <div class="pic">
+          <img
+            src="https://i.pinimg.com/236x/a6/cd/0a/a6cd0a15d5b2909539dd7944201127d2.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="box">
+        <div class="pic">
+          <img
+            src="https://i.pinimg.com/236x/7f/24/8c/7f248c9e18abe79de0d6c79617e03361.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="box">
+        <div class="pic">
+          <img
+            src="https://i.pinimg.com/236x/7f/24/8c/7f248c9e18abe79de0d6c79617e03361.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="box">
+        <div class="pic">
+          <img
+            src="https://i.pinimg.com/236x/a6/cd/0a/a6cd0a15d5b2909539dd7944201127d2.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="box">
+        <div class="pic">
+          <img
+            src="https://i.pinimg.com/236x/a6/cd/0a/a6cd0a15d5b2909539dd7944201127d2.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="box">
+        <div class="pic">
+          <img
+            src="https://i.pinimg.com/236x/7f/24/8c/7f248c9e18abe79de0d6c79617e03361.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="box">
+        <div class="pic">
+          <img
+            src="https://i.pinimg.com/236x/7f/24/8c/7f248c9e18abe79de0d6c79617e03361.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="box">
+        <div class="pic">
+          <img
+            src="https://i.pinimg.com/236x/a6/cd/0a/a6cd0a15d5b2909539dd7944201127d2.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="box">
+        <div class="pic">
+          <img
+            src="https://i.pinimg.com/236x/a6/cd/0a/a6cd0a15d5b2909539dd7944201127d2.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="box">
+        <div class="pic">
+          <img
+            src="https://i.pinimg.com/236x/7f/24/8c/7f248c9e18abe79de0d6c79617e03361.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="box">
+        <div class="pic">
+          <img
+            src="https://i.pinimg.com/236x/7f/24/8c/7f248c9e18abe79de0d6c79617e03361.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="box">
+        <div class="pic">
+          <img
+            src="https://i.pinimg.com/236x/a6/cd/0a/a6cd0a15d5b2909539dd7944201127d2.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    window.addEventListener("load", function () {
+      //1、实现瀑布流布局
+      waterFall("main", "box");
+    });
+
+    //2、加载数据（追加）
+    window.addEventListener("scroll", function () {
+      if (check()) {
+        //2.1 假数据
+        var dataArr = [
+          {
+            src: "https://i.pinimg.com/236x/65/aa/58/65aa58f9ec28f1a889a2cce245d23110.jpg",
+          },
+          {
+            src: "https://i.pinimg.com/236x/65/aa/58/65aa58f9ec28f1a889a2cce245d23110.jpg",
+          },
+          {
+            src: "https://i.pinimg.com/236x/65/aa/58/65aa58f9ec28f1a889a2cce245d23110.jpg",
+          },
+          {
+            src: "https://i.pinimg.com/236x/65/aa/58/65aa58f9ec28f1a889a2cce245d23110.jpg",
+          },
+        ];
+        //2.2 遍历数据
+        for (var i = 0; i < dataArr.length; i++) {
+          var newBox = document.createElement("div");
+          newBox.className = "box";
+          document.getElementById("main").appendChild(newBox);
+
+          var newPic = document.createElement("div");
+          newPic.className = "pic";
+          newBox.appendChild(newPic);
+
+          var newImg = document.createElement("img");
+          newImg.src = dataArr[i].src;
+          newPic.appendChild(newImg);
+        }
+
+        //重新进行瀑布流布局
+        waterFall("main", "box");
+      }
+    });
+
+    //追加在最矮盒子的后面
+    function check() {
+      //1、获取最后的盒子
+      var allBox = document.getElementsByClassName("box");
+      var lastBox = allBox[allBox.length - 1];
+      //2、 最后盒子高度的一半
+      var lastBoxDis = lastBox.offsetHeight * 0.5 + lastBox.offsetTop;
+
+      //3、页面高度
+      var screenH =
+        document.documentElement.clientHeight || document.body.clientHeight;
+
+      //4、求出页面滚出浏览器的高度（偏移高度）
+      var scrollTop = scroll().top;
+
+      //5、返回结构
+      return lastBoxDis <= screenH + scrollTop;
+    }
+
+    //兼容性
+    function scroll() {
+      if (window.pageYOffset != null) {
+        //返回一个字面量对象（JSON对象，JSON中的键必须有双引号）
+        return {
+          top: window.pageYOffset,
+          left: window.pageXOffset,
+        };
+      } else if (document.compatMode === "CSS1Compat") {
+        //W3C
+        return {
+          top: document.documentElement.scrollTop,
+          left: document.documentElement.scrollLeft,
+        };
+      } else {
+        return {
+          top: document.body.scrollTop,
+          left: document.body.scrollLeft,
+        };
+      }
+    }
+  </script>
+</html>
